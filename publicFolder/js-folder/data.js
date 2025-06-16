@@ -12,14 +12,16 @@ let html ='';
 function showOptions(){
    
     objectQuestion.options.forEach((option)=>{
-        html+=` <div class="flex justify-center items-center bg-blue-300">${option}</div>`
+        html+=` <button class="flex justify-center items-center bg-blue-300 cursor-pointer" id="option-js" "data-answer="${option}">${option}</button>`
     })
 }
   
 showOptions();
+
+document.querySelectorAll('#option-js').forEach
 document.querySelector('#question-container').innerHTML = `
-  <p>${objectQuestion.question}</p>
-  <div class="grid grid-cols-4 m-4 gap-4">
+  <p class="text-base">${objectQuestion.question}</p>
+  <div class="grid grid-cols-2 m-2 gap-2">
    ${html}
    </div>
 
