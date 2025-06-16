@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+
+@layer components {
+  .custombg{
+    @apply bg-gradient-to-r from-purple-500 to-blue-500;
+    @apply text-white
+  }
+}
+
+
+@layer base{
+    /* body {
+       background: bg-gradient-to-r from;
+    } */
+     
+}
+
+
+
