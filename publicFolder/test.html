@@ -5,18 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./styles.css" rel="stylesheet">
 </head>
-<body>
+<body class="custombg">
  
-   <div class=" grid grid-cols-4 gap-3 m-4">
-      <p class="text-base">Test</p>
-    <div class="flex justify-center items-center bg-blue-300">div1</div>
-       <div class="flex justify-center items-center bg-blue-300">div1</div>
-
-           <div class="flex justify-center items-center bg-blue-300">div1</div>
-
-               <div class="flex justify-center items-center bg-blue-300">div1</div>
-
-   </div>
+<button class="btn bg-blue-300 border-2 border-black p-4 ">Click me</button>
+<p class="questionAppear"></p>
 
 </body>
+<script> 
+   const testArr = [
+      {
+         testQuestion : "clickme1"
+      },
+        {
+         testQuestion : "clickme2"
+      },
+        {
+         testQuestion : "clickme3"
+      },
+         {
+         testQuestion : "clickme4"
+      },
+         {
+         testQuestion : "clickme5"
+      }
+   ]
+   
+   let i =1;
+  document.querySelector('.questionAppear').innerHTML=testArr[0].testQuestion;
+
+  let btn =document.querySelector('.btn');
+  btn.addEventListener('click',()=>{
+  document.querySelector('.questionAppear').innerHTML=testArr[i++].testQuestion;
+   
+  })
+</script>
 </html>
