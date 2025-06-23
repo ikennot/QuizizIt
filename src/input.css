@@ -11,6 +11,10 @@
    @apply bg-gradient-to-br from-purple-900 via-blue-900 to-blue-950;
    @apply text-white;
   }
+
+  .quizContainer{
+    @apply bg-blue-300 min-h-[140px] sm:min-h-[180px] lg:min-h-[300px] rounded-[10px]
+  }
 }
 
 
