@@ -1,4 +1,4 @@
-let questionList = [
+export let questionList = [
   {
     question: "1 + 1?",
     ans: "2",

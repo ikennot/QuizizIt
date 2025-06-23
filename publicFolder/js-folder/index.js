@@ -1,4 +1,4 @@
-
+import { questionList } from "./Quiz-data.js";
 let i = 0;
 function questionnare(i){
     let html ='';

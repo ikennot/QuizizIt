@@ -7,36 +7,15 @@
 </head>
 <body class="custombg">
  
-<button class="btn bg-blue-300 border-2 border-black p-4 ">Click me</button>
-<p class="questionAppear"></p>
+   <div id="question-container">
+    <p id="question"></p>
+     
+
+   </div>
+
+
 
 </body>
-<script> 
-   const testArr = [
-      {
-         testQuestion : "clickme1"
-      },
-        {
-         testQuestion : "clickme2"
-      },
-        {
-         testQuestion : "clickme3"
-      },
-         {
-         testQuestion : "clickme4"
-      },
-         {
-         testQuestion : "clickme5"
-      }
-   ]
-   
-   let i =1;
-  document.querySelector('.questionAppear').innerHTML=testArr[0].testQuestion;
+<script type="module" src="js-folder/index.js"></script>
 
-  let btn =document.querySelector('.btn');
-  btn.addEventListener('click',()=>{
-  document.querySelector('.questionAppear').innerHTML=testArr[i++].testQuestion;
-   
-  })
-</script>
 </html>
