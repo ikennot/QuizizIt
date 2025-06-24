@@ -6,17 +6,31 @@
     <title>Quizizit- your customazizable Quiz App</title>
 </head>
 <body class="quizBackground">
-  <header class="flex p-4 justify-center flex-row items-center fixed top-0 left-0 right-0">
-   <img src="./assets/icons/images/brain.png" class="w-[100px] h-[100px]">
+  <header class="flex p-4 justify-center flex-row items-center">
+   <img src="./assets/images/brain.png" class="w-[100px] h-[100px]">
    <div class="text-[35px] font-bold">QUIZIZIT</div>
   </header>
-<div class="grid grid-cols-2 sm:grid-cols-3  gap-10 p-2 pr-[50px] pl-[50px] mt-[120px] ">
-    <div class="quizContainer flex  flex-col  p-8 items-center gap-2">
-      <p class="text-5xl font-bold">Math Quiz</p>
-      <button>Take Quiz</button>
+<div class="grid grid-cols-2 sm:grid-cols-3  gap-10 p-2 pr-[50px] pl-[50px] mt-[20px] ">
+    <div class="MathQuizContainer flex  flex-col  p-8 items-center gap-3">
+      <img src="./assets/subject-icon/math.png" class="sm:w-[100px] sm:h-[100px] w-[50px] h-[50px]">
+      <p class="text-[10px] sm:text-5xl font-bold">Math Quiz</p>
+      <p class="text-[10px] sm:text-[15px]">10 Items</p>
+      <button class="button mathButton"><img src="./assets/icons/play.png" class="w-[20px] h-[20px]">Take</button>
     </div>
-    <div class="quizContainer">div2</div>
-    <div class="quizContainer">div3</div>
+    <div class="ScienceQuizContainer flex  flex-col  p-8 items-center gap-3">
+      <img src="./assets/subject-icon/science.png" class="sm:w-[100px] sm:h-[100px] w-[50px] h-[50px]">
+      <p class="text-[10px] sm:text-5xl font-bold">Science Quiz</p>
+      <p class="text-[10px] sm:text-[15px]">10 Items</p>
+      <button class="button"><img src="./assets/icons/play.png" class="w-[20px] h-[20px]">Take</button>
+    </div>
+    
+     <div class="TechQuizContainer flex  flex-col  p-8 items-center gap-3">
+      <img src="./assets/subject-icon/Technology.png" class="sm:w-[100px] sm:h-[100px] w-[50px] h-[50px]">
+      <p class="text-[10px] sm:text-5xl font-bold">Technology Quiz</p>
+      <p class="text-[10px] sm:text-[15px]">10 Items</p>
+      <button class="button" ><img src="./assets/icons/play.png" class="w-[20px] h-[20px]">Take</button>
+    </div>
 </div>
 </body>
+<script src="./js-folder/MainMenu.js" type="module"></script>
 </html>

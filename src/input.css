@@ -12,8 +12,26 @@
    @apply text-white;
   }
 
-  .quizContainer{
-    @apply bg-blue-300 min-h-[140px] sm:min-h-[180px] lg:min-h-[300px] rounded-[10px]
+  .MathQuizContainer{
+    @apply bg-rose-400 min-h-[140px] sm:min-h-[180px] lg:min-h-[300px] rounded-[10px];
+  }
+ .ScienceQuizContainer{
+    @apply bg-teal-600 min-h-[140px] sm:min-h-[180px] lg:min-h-[300px] rounded-[10px];
+     
+  }
+  .ScienceQuizContainer{
+    @apply bg-teal-600 min-h-[140px] sm:min-h-[180px] lg:min-h-[300px] rounded-[10px];
+     
+  }
+    .TechquizContainer{
+    @apply bg-blue-500 min-h-[140px] sm:min-h-[180px] lg:min-h-[300px] rounded-[10px]
+  }
+
+
+  .button{
+    @apply bg-blue-800 border-0 text-[10px] pl-[10px] pr-[10px] pt-[5px] pb-[5px] font-bold flex items-center gap-1 rounded-[5px] cursor-pointer; 
+    @apply sm:text-[20px] sm:pl-[25px] sm:pr-[25px];
+    @apply hover:bg-blue-200 transition duration-300 ease-in-out 
   }
 }
 
