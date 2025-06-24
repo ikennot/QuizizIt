@@ -29,10 +29,26 @@
 
 
   .button{
-    @apply bg-blue-800 border-0 text-[10px] pl-[10px] pr-[10px] pt-[5px] pb-[5px] font-bold flex items-center gap-1 rounded-[5px] cursor-pointer; 
+    @apply flex flex-row items-center justify-center gap-2;
+    @apply bg-blue-800 border-0 text-[10px]  px-[10px] py-[5px] font-bold flex items-center gap-1 rounded-[5px] cursor-pointer; 
     @apply sm:text-[20px] sm:pl-[25px] sm:pr-[25px];
     @apply hover:bg-blue-200 transition duration-300 ease-in-out 
   }
+
+
+  .ansButton {
+  @apply px-5 py-2 sm:px-15 sm:py-7 bg-blue-900 font-bold rounded-[5px] cursor-pointer;
+  @apply hover:bg-blue-200 transition duration-500;
+}
+
+
+.mainQuestionContainer{
+  @apply w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-blue-950 rounded-2xl flex flex-col gap-2 items-center relative;
+}
+
+.QuizTitleContainer{
+  @apply absolute bg-rose-400 top-0 left-0 right-0 h-20 sm:h-30 rounded-tr-2xl rounded-tl-2xl flex flex-row justify-center items-center gap-2;
+}
 }
 
 
