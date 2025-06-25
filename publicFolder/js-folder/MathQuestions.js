@@ -25,19 +25,21 @@ document.querySelectorAll('.ansButton-js').forEach((button)=>{
    
    button.addEventListener('click',()=>{
       let {answer} = button.dataset;
-      
-      if(answer === questionList[i].ans && i < length){
-         correct.play();
-        html = '';
-        questionnare(++i);
-      }else if(answer ==! questionList[i].ans && i < length)
-        {
-            wrong.play();
-            html = '';
-            questionnare(i);
-        }else{
-            window.location.href = `./MainMenu.html`
-        }
+      (answer === questionList[i].ans)? correct.play() : wrong.play();
+  
+
+        if(i < length) {    
+        setTimeout(()=>{
+           html = '';
+          questionnare(++i);
+          },1000);
+         }else{
+            setTimeout(()=>{
+           window.location.href = `./MainMenu`
+          },2000);
+           
+         }
+
    })
 })
 
