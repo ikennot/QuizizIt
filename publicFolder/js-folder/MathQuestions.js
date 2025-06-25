@@ -58,6 +58,9 @@ function DisplayScore(){
   </div>`;
 
   let button = document.querySelector('.exitButton-js');
+button.addEventListener('click',()=>{
+   window.location.href ="./MainMenu.html";
+})
 }
 
 questionnare(i);
