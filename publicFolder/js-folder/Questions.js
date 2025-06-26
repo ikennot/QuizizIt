@@ -1,11 +1,20 @@
 
-import { questionList } from "./Quiz-data.js";
+import { subjectList } from "./Quiz-data.js";
 let html =  '';
 let i = 0;
 let length = questionList.length-1;
 let wrong = document.querySelector('.wrong');
 let correct = document.querySelector('.correct');
 let score = 0;
+
+let questionList;
+let choose = localStorage.getItem("choose");
+subjectList.forEach((subject)=>{
+   if(subject.category === choose)
+   {
+      questionList = 
+   }
+})
 
 function questionnare(i){
    let questionNum = document.querySelector('.questionNum-js');
