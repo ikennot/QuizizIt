@@ -1,20 +1,26 @@
 
 import { subjectList } from "./Quiz-data.js";
+
 let html =  '';
 let i = 0;
-let length = questionList.length-1;
 let wrong = document.querySelector('.wrong');
 let correct = document.querySelector('.correct');
 let score = 0;
 
 let questionList;
+let subjectQuestion;
 let choose = localStorage.getItem("choose");
-subjectList.forEach((subject)=>{
-   if(subject.category === choose)
+
+for(let i = 0; i < subjectList.length; i++){
+   console.log(subjectList[i].items)
+   if(subjectList[i].category === choose)
    {
-      questionList = 
+      subjectQuestion = subjectList[i];
    }
-})
+}
+
+questionList = subjectQuestion.questionList;
+let length = subjectQuestion.items;
 
 function questionnare(i){
    let questionNum = document.querySelector('.questionNum-js');
@@ -39,14 +45,13 @@ document.querySelectorAll('.ansButton-js').forEach((button)=>{
       (answer === questionList[i].ans)? (correct.play(), score++) : wrong.play();
       
 
-        if(i < length) {    
+        if(i < length-1) {    
         setTimeout(()=>{
            html = '';
           questionnare(++i);
           },1000);
          }else{
             setTimeout(()=>{
-         //   window.location.href = `./MainMenu`
          DisplayScore();
           },2000);
            
@@ -62,7 +67,7 @@ function DisplayScore(){
     <p class=" text-[20px] sm:text-4xl font-bold">Quiz Completed</p>
     <img src="./assets/icons/check.png" class=" h-[50px] w-[50px] sm:h-[150px] sm:w-[150px]">
     <p class="text-[15px] sm:text-3xl">Your Score</p>
-    <p class="text-[30px] sm:text-6xl font-bold">${score}/${length+1}</p>
+    <p class="text-[30px] sm:text-6xl font-bold">${score}/${length}</p>
     <button class="button exitButton-js">Exit</button>
   </div>`;
 

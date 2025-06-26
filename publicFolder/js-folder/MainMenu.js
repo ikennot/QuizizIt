@@ -15,7 +15,7 @@ window.location.href = `./Questions.html`;
 })
 
 const techButton = document.querySelector('.techButton');
-techButton.addEventListener('.click',()=>{
+techButton.addEventListener('click',()=>{
 let {category} = techButton.dataset;
 localStorage.setItem("choose",category);
 window.location.href = `./Questions.html`;
