@@ -241,6 +241,9 @@
   .cursor-pointer {
     cursor: pointer;
   }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -508,13 +511,14 @@
     background-color: var(--color-blue-900);
     padding-inline: calc(var(--spacing) * 5);
     padding-block: calc(var(--spacing) * 2);
+    font-size: 15px;
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
     @media (width >= 40rem) {
-      padding-inline: calc(var(--spacing) * 15);
+      padding-inline: calc(var(--spacing) * 5);
     }
     @media (width >= 40rem) {
-      padding-block: calc(var(--spacing) * 7);
+      padding-block: calc(var(--spacing) * 5);
     }
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -530,18 +534,18 @@
   .mainQuestionContainer {
     position: relative;
     display: flex;
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 400px;
     flex-direction: column;
     align-items: center;
-    gap: calc(var(--spacing) * 2);
+    gap: calc(var(--spacing) * 1);
     border-radius: var(--radius-2xl);
     background-color: var(--color-blue-950);
     @media (width >= 40rem) {
-      height: 500px;
+      height: 600px;
     }
     @media (width >= 40rem) {
-      width: 500px;
+      width: 600px;
     }
   }
   .QuizTitleContainer {
