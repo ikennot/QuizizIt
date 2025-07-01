@@ -1,4 +1,7 @@
 
+function saveLocalStorage(){
+  localStorage.setItem('quiz',JSON.stringify(subjectList));
+}
 export let subjectList = [
 
 {
