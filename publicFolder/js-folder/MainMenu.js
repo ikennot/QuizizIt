@@ -22,3 +22,7 @@ window.location.href = `./Questions.html`;
 })
 
 
+const createQuiz = document.querySelector('.create-quiz-js');
+createQuiz.addEventListener('click',()=>{
+    window.location.href = './QuizCreation.html';
+})

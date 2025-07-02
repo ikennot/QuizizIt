@@ -24,12 +24,14 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
 `
  const nextButton = document.querySelector('.button-next');
  nextButton.addEventListener('click',()=>{
+
+  
   CreateQuestion();
  })
 
  const doneButton = document.querySelector('.button-done');
  doneButton.addEventListener('click',()=>{
-  
+   window.location.href ="./MainMenu.html";
  })
 }
 
