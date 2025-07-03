@@ -59,6 +59,10 @@
 .footerIcon{
   @apply w-[30px] h-[30px] cursor-pointer;
 }
+
+.chooseAnswerButton{
+  @apply p-4 bg-gray-200 rounded-2xl cursor-pointer hover:bg-gray-500 transition duration-300
+}
 }
 
 
