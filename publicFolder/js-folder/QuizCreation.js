@@ -6,13 +6,25 @@ let questionIndex = 0;
     let  items = 1;
      let ans = '';
     let questionList = [] 
+  
+ function isAllFilledUp(){
+    const question = document.querySelector('.getQuestion').value;
+     const O1 = document.querySelector('.option1').value;
+     const O2 = document.querySelector('.option2').value;
+     const O3 = document.querySelector('.option3').value;
+     const O4 = document.querySelector('.option4').value;
 
+     return (question !== '') && (ans !== '') && (O1 !== '') (O2 !== '') (O3 !== '') (O4 !== '');
+ }
 function addQuestion(ans){
    const question = document.querySelector('.getQuestion').value;
      const O1 = document.querySelector('.option1').value;
      const O2 = document.querySelector('.option2').value;
      const O3 = document.querySelector('.option3').value;
      const O4 = document.querySelector('.option4').value;
+       
+  
+     
       questionList.push(
        {
        question,
@@ -60,19 +72,20 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
 
  const nextButton = document.querySelector('.button-next');
  nextButton.addEventListener('click',()=>{
-
+    const isFillAll = isAllFilledUp();
+   if(isFillAll){
    addQuestion(ans);
   ++items;
   CreateQuestion();
+   }else
+   console.log('complete form')
  })
 
  const doneButton = document.querySelector('.button-done');
  doneButton.addEventListener('click',()=>{
-  //  window.location.href ="./MainMenu.html";
   addQuestion(ans);
    category = document.querySelector('.subject-name').value;
    subjectCategory = document.querySelector('.subject-category').value;
- 
    subjectList.push({
     subjectCategory,
     category,
@@ -81,6 +94,8 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
    })
   
    console.log(subjectList)
+    saveLocalStorage();
+     window.location.href ="./MainMenu.html";
  })
 }
 
