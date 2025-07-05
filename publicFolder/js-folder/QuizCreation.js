@@ -4,6 +4,7 @@ let questionIndex = 0;
     let subjectCategory = '';
     let category= ``;
     let  items = 1;
+     let ans = '';
     let questionList = [] 
 
 function addQuestion(ans){
@@ -22,7 +23,6 @@ function addQuestion(ans){
   console.log(questionList);
 }
 function CreateQuestion(){
-  let ans = '';
 document.querySelector('.QuestionContainer-js').innerHTML = `
 <p class="text-2xl font-bold">Question ${++questionIndex}</p>
  <input type="text" placeholder="Enter Question" class="bg-white text-black p-1.5 sm:p-2.5 sm:w-[400px] getQuestion">
@@ -49,6 +49,7 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
         removebutton.classList.remove('bg-red-500'); 
       }else{
         ans = document.querySelector(`.option${num}`).value;
+        console.log(ans)
       }
 
       num++;
@@ -60,7 +61,7 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
  const nextButton = document.querySelector('.button-next');
  nextButton.addEventListener('click',()=>{
 
-   addQuestion();
+   addQuestion(ans);
   ++items;
   CreateQuestion();
  })
