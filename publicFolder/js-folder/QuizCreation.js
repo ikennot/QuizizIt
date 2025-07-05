@@ -1,25 +1,25 @@
 import { saveLocalStorage,subjectList } from "./Quiz-data.js";
 let questionIndex = 0;  
  
-let subject = {
-    category: ``,
-    items: 1,
-    questionList : [] 
-}
+    let subjectCategory = '';
+    let category= ``;
+    let  items = 1;
+    let questionList = [] 
+
 function addQuestion(ans){
    const question = document.querySelector('.getQuestion').value;
      const O1 = document.querySelector('.option1').value;
      const O2 = document.querySelector('.option2').value;
      const O3 = document.querySelector('.option3').value;
      const O4 = document.querySelector('.option4').value;
-    subject.questionList.push(
+      questionList.push(
        {
        question,
        ans,
        options : [O1,O2,O3,O4]
        }
     )
-  console.log(subject.questionList);
+  console.log(questionList);
 }
 function CreateQuestion(){
   let ans = '';
@@ -61,7 +61,7 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
  nextButton.addEventListener('click',()=>{
 
    addQuestion();
-  ++subject.items;
+  ++items;
   CreateQuestion();
  })
 
@@ -69,12 +69,14 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
  doneButton.addEventListener('click',()=>{
   //  window.location.href ="./MainMenu.html";
   addQuestion(ans);
-  const category = document.querySelector('.subject-name').value;
-  const subjectCategory = document.querySelector('.subject-category').value;
-  subject.category = category;
-  subject.subjectCategory=subjectCategory;
+   category = document.querySelector('.subject-name').value;
+   subjectCategory = document.querySelector('.subject-category').value;
+ 
    subjectList.push({
-    subject
+    subjectCategory,
+    category,
+    items,
+    questionList
    })
   
    console.log(subjectList)
