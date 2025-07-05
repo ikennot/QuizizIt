@@ -27,11 +27,13 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
     const {choose} = button.dataset;
     button.classList.add('bg-red-500'); 
      
-    document.querySelectorAll('.chooseAnswerButton').forEach((buttonRemove)=>{
-      const buttonRemove  = button.dataset.choose;
-      buttonRemove.forEach((remo))
-    })
+    document.querySelectorAll('.chooseAnswerButton').forEach((removebutton)=>{
+      const remove = removebutton.dataset.choose;
 
+      if(choose !== remove){
+        removebutton.classList.remove('bg-red-500'); 
+      }
+    })
       
   })
  })
