@@ -2,7 +2,7 @@
 export function saveLocalStorage(){
   localStorage.setItem('quiz',JSON.stringify(subjectList));
 }
-export let subjectList = [
+export let subjectList =JSON.parse(localStorage.getItem('quiz')) || [
 
 { 
   subjectCategory : "academic",
