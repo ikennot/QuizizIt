@@ -1,6 +1,6 @@
 import { saveLocalStorage,subjectList } from "./Quiz-data.js";
 let questionIndex = 0;  
-
+let items  = 1;
 
 let subject = {
     category: ``,
@@ -58,7 +58,8 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
        options : [O1,O2,O3,O4]
        }
     )
-  console.log(subject.questionList)
+  console.log(subject.questionList);
+  ++items;
   CreateQuestion();
  })
 
