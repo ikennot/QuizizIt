@@ -10,7 +10,7 @@ let subject = {
 function CreateQuestion(){
 document.querySelector('.QuestionContainer-js').innerHTML = `
 <p class="text-2xl font-bold">Question ${++questionIndex}</p>
- <input type="text" placeholder="Enter Question" class="bg-white text-black p-1.5 sm:p-2.5 sm:w-[400px]">
+ <input type="text" placeholder="Enter Question" class="bg-white text-black p-1.5 sm:p-2.5 sm:w-[400px] getQuestion">
   <div class=" flex flex-col items-center gap-1.5">
   <div class="flex flex-row items-center gap-2.5"><input type="text" placeholder="Option 1" class="inputChoice option1"> <button class="chooseAnswerButton" data-choose="choose1"></button></div> 
   <div class="flex flex-row items-center gap-2.5"><input type="text" placeholder="Option 2" class="inputChoice option2"> <button class="chooseAnswerButton" data-choose="choose2"></button></div> 
@@ -34,7 +34,11 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
         removebutton.classList.remove('bg-red-500'); 
       }
     })
-      
+     let question = document.querySelector('.getQuestion').value;
+    subject.questionList.push(
+       question,
+        
+    )
   })
  })
 
