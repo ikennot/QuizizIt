@@ -1,3 +1,5 @@
+import { subjectList } from "./Quiz-data.js";
+
 let choose = localStorage.getItem("choose");
 
 const mathButton = document.querySelector('.mathButton');
@@ -26,3 +28,5 @@ const createQuiz = document.querySelector('.create-quiz-js');
 createQuiz.addEventListener('click',()=>{
     window.location.href = './QuizCreation.html';
 })
+
+console.log(subjectList)

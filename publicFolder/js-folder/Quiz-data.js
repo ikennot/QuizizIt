@@ -4,7 +4,8 @@ export function saveLocalStorage(){
 }
 export let subjectList = [
 
-{
+{ 
+  subjectCategory : "academic",
   category : "Math",
   items : 5,
   questionList : [
@@ -63,6 +64,7 @@ export let subjectList = [
 },
 
 {
+  subjectCategory: "academic",
   category: "Science",
   items : 5,
   questionList: [
@@ -96,6 +98,7 @@ export let subjectList = [
 },
 
 {
+    subjectCategory: "academic",
   category: "Tech",
    items : 5,
   questionList: [
