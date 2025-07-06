@@ -14,7 +14,7 @@ let questionIndex = 0;
      const O3 = document.querySelector('.option3').value;
      const O4 = document.querySelector('.option4').value;
 
-     return (question !== '') && (ans !== '') && (O1 !== '') (O2 !== '') (O3 !== '') (O4 !== '');
+     return (question !== '') && (ans !== '') && (O1 !== '') && (O2 !== '') && (O3 !== '') && (O4 !== '');
  }
 
  function isSubAndCategoryFilledUp(){
