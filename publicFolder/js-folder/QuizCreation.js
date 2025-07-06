@@ -16,6 +16,13 @@ let questionIndex = 0;
 
      return (question !== '') && (ans !== '') && (O1 !== '') (O2 !== '') (O3 !== '') (O4 !== '');
  }
+
+ function isSubAndCategoryFilledUp(){
+  const subname = document.querySelector('.subject-name').value;
+  const category = document.querySelector('.subject-category').value;
+
+  return (subname !=='') && (category !== '');
+ }
 function addQuestion(ans){
    const question = document.querySelector('.getQuestion').value;
      const O1 = document.querySelector('.option1').value;
@@ -78,11 +85,18 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
   ++items;
   CreateQuestion();
    }else
-   console.log('complete form')
+   alert('Please Complete Question form');
  })
 
  const doneButton = document.querySelector('.button-done');
  doneButton.addEventListener('click',()=>{
+  const isCompleteQuestion = isAllFilledUp();
+  const isThereSubAndCat = isSubAndCategoryFilledUp();
+  if(!isCompleteQuestion || isThereSubAndCat)
+  {
+    alert('Please Fill up all forms');
+    return;
+  }
   addQuestion(ans);
    category = document.querySelector('.subject-name').value;
    subjectCategory = document.querySelector('.subject-category').value;
