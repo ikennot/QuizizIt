@@ -540,7 +540,7 @@
       min-height: 300px;
     }
   }
-  .ScienceQuizContainer {
+  .logicQuizContainer {
     min-height: 140px;
     border-radius: 10px;
     background-color: var(--color-teal-600);
@@ -551,7 +551,7 @@
       min-height: 300px;
     }
   }
-  .techquizContainer {
+  .techQuizContainer {
     min-height: 140px;
     border-radius: 10px;
     background-color: var(--color-blue-500);
@@ -562,7 +562,7 @@
       min-height: 300px;
     }
   }
-  .general-knowledgequizContainer {
+  .general-knowledgeQuizContainer {
     min-height: 140px;
     border-radius: 10px;
     background-color: var(--color-gray-400);

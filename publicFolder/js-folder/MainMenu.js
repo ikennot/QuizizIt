@@ -37,12 +37,16 @@ html += `<div class="${subject.subjectCategory}QuizContainer flex  flex-col  p-8
       <img src="./assets/subject-icon/${subject.subjectCategory}.png" class="sm:w-[100px] sm:h-[100px] w-[50px] h-[50px]">
       <p class="text-[10px] sm:text-3xl font-bold">${subject.category}</p>
       <p class="text-[10px] sm:text-[15px]">${subject.items} Items</p>
-      <button class="button mathButton" data-category ="${subject.category}"><img src="./assets/icons/play.png" class="w-[20px] h-[20px]">Take</button>
+      <button class="button take-button" data-category ="${subject.category}"><img src="./assets/icons/play.png" class="w-[20px] h-[20px]">Take</button>
     </div>
     `
 })
 
 
+document.querySelectorAll('.take-button').forEach((button)=>{
+
+    button.addEventListener
+})
 
 
     document.querySelector('.quiz-grid-container').innerHTML = html;

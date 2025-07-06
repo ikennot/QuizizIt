@@ -16,22 +16,23 @@
     @apply bg-rose-400 min-h-[140px] sm:min-h-[180px] lg:min-h-[300px] rounded-[10px];
   }
 
- .ScienceQuizContainer{
+ .logicQuizContainer{
     @apply bg-teal-600 min-h-[140px] sm:min-h-[180px] lg:min-h-[300px] rounded-[10px];
      
   }
  
-    .techquizContainer{
+    .techQuizContainer{
     @apply bg-blue-500 min-h-[140px] sm:min-h-[180px] lg:min-h-[300px] rounded-[10px]
   }
 
-  .general-knowledgequizContainer{
+  .general-knowledgeQuizContainer{
     @apply bg-gray-400 min-h-[140px] sm:min-h-[180px] lg:min-h-[300px] rounded-[10px]
   }
 
     .popquizContainer{
     @apply bg-yellow-400 min-h-[140px] sm:min-h-[180px] lg:min-h-[300px] rounded-[10px]
   }
+  
   .button{
     @apply flex flex-row items-center justify-center gap-2;
     @apply bg-blue-800 border-0 text-[10px]  px-[10px] py-[5px] font-bold flex items-center gap-1 rounded-[5px] cursor-pointer; 
