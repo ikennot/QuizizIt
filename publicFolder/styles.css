@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-yellow-400: oklch(85.2% 0.199 91.936);
     --color-teal-600: oklch(60% 0.118 184.704);
     --color-blue-100: oklch(93.2% 0.032 255.585);
     --color-blue-200: oklch(88.2% 0.059 254.128);
@@ -528,7 +529,7 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
     color: var(--color-white);
   }
-  .MathQuizContainer {
+  .academicQuizContainer {
     min-height: 140px;
     border-radius: 10px;
     background-color: var(--color-rose-400);
@@ -550,10 +551,10 @@
       min-height: 300px;
     }
   }
-  .ScienceQuizContainer {
+  .techquizContainer {
     min-height: 140px;
     border-radius: 10px;
-    background-color: var(--color-teal-600);
+    background-color: var(--color-blue-500);
     @media (width >= 40rem) {
       min-height: 180px;
     }
@@ -561,10 +562,21 @@
       min-height: 300px;
     }
   }
-  .TechquizContainer {
+  .general-knowledgequizContainer {
     min-height: 140px;
     border-radius: 10px;
-    background-color: var(--color-blue-500);
+    background-color: var(--color-gray-400);
+    @media (width >= 40rem) {
+      min-height: 180px;
+    }
+    @media (width >= 64rem) {
+      min-height: 300px;
+    }
+  }
+  .popquizContainer {
+    min-height: 140px;
+    border-radius: 10px;
+    background-color: var(--color-yellow-400);
     @media (width >= 40rem) {
       min-height: 180px;
     }
