@@ -18,15 +18,19 @@ for(let i = 0; i < subjectList.length; i++){
       subjectQuestion = subjectList[i];
    }
 }
-
+ 
+document.querySelector('.quiz-container-js').innerHTML = `
+<img src="./assets/subject-icon/${subjectQuestion.subjectCategory}.png" class="w-[40px] h-[40px]">  
+    <p class="font-bold text-3xl">${subjectQuestion.category} Quiz</p>
+`
 questionList = subjectQuestion.questionList;
 let length = subjectQuestion.items;
-
+ 
 function questionnare(i){
    let questionNum = document.querySelector('.questionNum-js');
    let question = document.querySelector('.question-js');
    let buttonOption = document.querySelector('.button-options-js');
-
+    
    questionNum.innerHTML = `Question ${i+1}`;
    question.innerHTML = `${questionList[i].question}`;
   

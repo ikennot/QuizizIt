@@ -1,6 +1,6 @@
 import { subjectList } from "./Quiz-data.js";
 
-  let choose = localStorage.getItem("choose");
+
 
 // const mathButton = document.querySelector('.mathButton');
 // mathButton.addEventListener('click',()=>{
@@ -43,14 +43,17 @@ html += `<div class="${subject.subjectCategory}QuizContainer flex  flex-col  p-8
 })
 
 
-document.querySelectorAll('.take-button').forEach((button)=>{
-
-    button.addEventListener
-})
-
-
     document.querySelector('.quiz-grid-container').innerHTML = html;
    
+    document.querySelectorAll('.take-button').forEach((button)=>{
+
+    button.addEventListener('click',()=>{
+      const {category} = button.dataset;
+    localStorage.setItem("choose",category);
+    window.location.href = `./Questions.html`
+    })
+})
+
 }
 
 generateSubjects();
