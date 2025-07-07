@@ -33,3 +33,4 @@ html += `<div class="${subject.subjectCategory}QuizContainer flex  flex-col  p-8
 }
 
 generateSubjects();
+console.log(subjectList)

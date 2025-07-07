@@ -1,4 +1,4 @@
-import { subjectList } from "./Quiz-data.js";
+import { subjectList,deleteQuiz } from "./Quiz-data.js";
 
 function generateManageTables(){
 let html = ''
@@ -20,8 +20,12 @@ html += `<div class="${subject.subjectCategory}QuizContainer flex  flex-col  p-8
 
     button.addEventListener('click',()=>{
       const {category} = button.dataset;
-      
+      deleteQuiz(category);
+      generateManageTables();
+    
     })
+
+   
 })
 }
 
