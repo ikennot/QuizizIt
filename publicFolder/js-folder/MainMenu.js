@@ -5,6 +5,10 @@ createquiz.addEventListener('click',()=>{
   window.location.href='./QuizCreation.html'
 })
 
+const managequiz = document.querySelector('.manage-quiz-js');
+managequiz.addEventListener('click',()=>{
+  window.location.href = './ManageQuiz.html'
+})
 function generateSubjects(){
 let html = ''
 

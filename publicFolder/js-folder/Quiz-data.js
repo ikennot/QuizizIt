@@ -3,18 +3,6 @@ export function saveLocalStorage(){
   localStorage.setItem('quiz',JSON.stringify(subjectList));
 }
 
-export function deleteQuiz(category){
-     let newSubjectList = subjectList;
-      subjectList.forEach((subject)=>{
-        if(subject.category != category){
-            newSubjectList.push(subject);
-        }
-      }
-     
-    )
-    subjectList = newSubjectList;
-    saveLocalStorage();
-}
 export let subjectList =JSON.parse(localStorage.getItem('quiz')) || [
 
 { 
@@ -155,3 +143,17 @@ export let subjectList =JSON.parse(localStorage.getItem('quiz')) || [
 }
 
 ];
+
+
+export function deleteQuiz(category){
+     let newSubjectList = [];
+      subjectList.forEach((subject)=>{
+        if(subject.category !== category){
+            newSubjectList.push(subject);
+        }
+      }
+     
+    )
+    subjectList = newSubjectList;
+    saveLocalStorage();
+}

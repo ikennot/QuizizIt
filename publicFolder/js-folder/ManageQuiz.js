@@ -9,6 +9,7 @@ html += `<div class="${subject.subjectCategory}QuizContainer flex  flex-col  p-8
       <p class="text-[10px] sm:text-3xl font-bold">${subject.category}</p>
       <p class="text-[10px] sm:text-[15px]">${subject.items} Items</p>
       <button class="button bg-red-500 delete-button" data-category ="${subject.category}"><img src="./assets/icons/delete.png" class="w-[20px] h-[20px]">Delete</button>
+        <button class="button  update-button" data-category ="${subject.category}"><img src="./assets/icons/editing.png" class="w-[20px] h-[20px]">Update   </button>
     </div>
     `
 })
@@ -17,14 +18,15 @@ html += `<div class="${subject.subjectCategory}QuizContainer flex  flex-col  p-8
     document.querySelector('.quiz-grid-container').innerHTML = html;
    
     document.querySelectorAll('.delete-button').forEach((button)=>{
-
     button.addEventListener('click',()=>{
       const {category} = button.dataset;
       deleteQuiz(category);
       generateManageTables();
-    
     })
 
+  document.querySelectorAll('.update-button').forEach((button)=>{
+    button.
+  })
    
 })
 }
