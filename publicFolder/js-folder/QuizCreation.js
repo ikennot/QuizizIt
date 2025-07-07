@@ -92,7 +92,7 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
  doneButton.addEventListener('click',()=>{
   const isCompleteQuestion = isAllFilledUp();
   const isThereSubAndCat = isSubAndCategoryFilledUp();
-  if(!isCompleteQuestion || isThereSubAndCat)
+  if(!isCompleteQuestion || !isThereSubAndCat)
   {
     alert('Please Fill up all forms');
     return;
