@@ -3,6 +3,7 @@ let categoryHTML = ``;
 let questionIndex = 0;  
 let choose = localStorage.getItem("choose");
 let subjectQuestion;
+ let ans = '';
 for(let i = 0; i < subjectList.length; i++){
 
    if(subjectList[i].category === choose)
@@ -21,16 +22,27 @@ subjectCategoryList.forEach((subject)=>{
 })
 
 document.querySelector('.choose-option').innerHTML = categoryHTML;
- function generateOptionValue(i){
+ function generateQuestionsValue(i){
+  document.querySelector('.getQuestion').value = subjectQuestion.questionList[i].question
    const option1 = document.querySelector('.option1');
-   option1.value = `${subjectQuestion.questionList[i][0]}`
+   option1.value = `${subjectQuestion.questionList[i].options[0]}`
    const option2 = document.querySelector('.option2');
-   option2.value = `${subjectQuestion.questionList[i][1]}`
+   option2.value = `${subjectQuestion.questionList[i].options[1]}`
    const option3 = document.querySelector('.option3');
-   option3.value = `${subjectQuestion.questionList[i][2]}`
-   const option4 = document.querySelector('.option3');
-   option4.value = `${subjectQuestion.questionList[i][3]}`
+   option3.value = `${subjectQuestion.questionList[i].options[2]}`
+   const option4 = document.querySelector('.option4');
+   option4.value = `${subjectQuestion.questionList[i].options[3]}`
+
+
+ document.querySelectorAll('.chooseAnswerButton').forEach((button)=>{
+    const {choose} = button.dataset;
+    
+      if(choose === subjectQuestion.questionList[i].ans)
+        button.classList.add('bg-red-500');
+   })
  }
+
+
 function generateUpdate(){
     document.querySelector('.QuestionContainer-js').innerHTML = `
 <p class="text-2xl font-bold">Question ${++questionIndex}</p>
@@ -46,6 +58,27 @@ function generateUpdate(){
     <button class="button button-next">Next Question</button>
   </div>
 `
-generateOptionValue(0)
+ document.querySelectorAll('.chooseAnswerButton').forEach((button)=>{
+  button.addEventListener('click',()=>{
+    const {choose} = button.dataset;
+    button.classList.add('bg-red-500'); 
+    let num = 1;
+    document.querySelectorAll('.chooseAnswerButton').forEach((removebutton)=>{
+      const remove = removebutton.dataset.choose;
+    
+      if(choose !== remove){
+        removebutton.classList.remove('bg-red-500'); 
+      }else{
+        ans = document.querySelector(`.option${num}`).value;
+        console.log(ans)
+      }
+
+      num++;
+    })
+
+  })
+ })
+
+generateQuestionsValue(0)
 }
 generateUpdate();
