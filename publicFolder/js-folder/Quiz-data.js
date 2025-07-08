@@ -144,7 +144,28 @@ export let subjectList =JSON.parse(localStorage.getItem('quiz')) || [
 
 ];
 
-export subjectCategoryList = ['academic']
+export const subjectCategoryList = [
+  {
+    value:'academic',
+    showValue: 'Academics'
+  },
+  {
+    value:'general-knowledge',
+    showValue:'General knowledge'
+  },
+  {
+    value:'logic',
+    showValue:'Logic and Brain Teasers'
+  },
+  {
+    value:'tech',
+    showValue:'Technology and Web Development'
+  },
+  {
+    value:'pop',
+    showValue:'Pop Culture and Entertainment'
+  }
+];
 
 export function deleteQuiz(category){
      let newSubjectList = [];

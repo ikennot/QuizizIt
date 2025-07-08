@@ -1,4 +1,5 @@
-import { subjectList } from "./Quiz-data.js"
+import { subjectList,subjectCategoryList } from "./Quiz-data.js"
+let categoryHTML = ``;
 let choose = localStorage.getItem("choose");
 let subjectQuestion;
 for(let i = 0; i < subjectList.length; i++){
@@ -8,8 +9,14 @@ for(let i = 0; i < subjectList.length; i++){
       subjectQuestion = subjectList[i];
    }
 }
- document.querySelector('.subject-name').value = subjectQuestion.category;
+// const isSubjectCategory = subjectQuestion
+document.querySelector('.subject-name').value = subjectQuestion.category;
 
+subjectCategoryList.forEach((subjectCategory)=>{
+  categoryHTML+=`<option value="general-knowledge">General knowledge</option>`
+})
+
+ 
 function generateUpdate(){
     document.querySelector('.QuestionContainer-js').innerHTML = `
 <p class="text-2xl font-bold">Question ${++questionIndex}</p>
