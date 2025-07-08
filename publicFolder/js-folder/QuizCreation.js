@@ -106,8 +106,6 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
     items,
     questionList
    })
-  
-   console.log(subjectList)
     saveLocalStorage();
      window.location.href ="./MainMenu.html";
  })

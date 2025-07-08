@@ -1,5 +1,6 @@
 import { subjectList,subjectCategoryList } from "./Quiz-data.js"
 let categoryHTML = ``;
+let questionIndex = 0;  
 let choose = localStorage.getItem("choose");
 let subjectQuestion;
 for(let i = 0; i < subjectList.length; i++){
@@ -9,14 +10,27 @@ for(let i = 0; i < subjectList.length; i++){
       subjectQuestion = subjectList[i];
    }
 }
-// const isSubjectCategory = subjectQuestion
+
 document.querySelector('.subject-name').value = subjectQuestion.category;
 
-subjectCategoryList.forEach((subjectCategory)=>{
-  categoryHTML+=`<option value="general-knowledge">General knowledge</option>`
+const category = subjectQuestion.subjectCategory;
+subjectCategoryList.forEach((subject)=>{
+  const isSelected = (category === subject.value) ?  `selected` : '';
+  categoryHTML+=`<option value="${subject.value}" ${isSelected}>${subject.showValue}</option>`
+
 })
 
- 
+document.querySelector('.choose-option').innerHTML = categoryHTML;
+ function generateOptionValue(i){
+   const option1 = document.querySelector('.option1');
+   option1.value = `${subjectQuestion.questionList[i][0]}`
+   const option2 = document.querySelector('.option2');
+   option2.value = `${subjectQuestion.questionList[i][1]}`
+   const option3 = document.querySelector('.option3');
+   option3.value = `${subjectQuestion.questionList[i][2]}`
+   const option4 = document.querySelector('.option3');
+   option4.value = `${subjectQuestion.questionList[i][3]}`
+ }
 function generateUpdate(){
     document.querySelector('.QuestionContainer-js').innerHTML = `
 <p class="text-2xl font-bold">Question ${++questionIndex}</p>
@@ -32,4 +46,6 @@ function generateUpdate(){
     <button class="button button-next">Next Question</button>
   </div>
 `
+generateOptionValue(0)
 }
+generateUpdate();

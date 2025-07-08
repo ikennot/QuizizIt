@@ -100,7 +100,7 @@ export let subjectList =JSON.parse(localStorage.getItem('quiz')) || [
 
 {
     subjectCategory: "academic",
-  category: "Tech",
+  category: "tech",
    items : 5,
   questionList: [
     {
@@ -158,7 +158,7 @@ export const subjectCategoryList = [
     showValue:'Logic and Brain Teasers'
   },
   {
-    value:'tech',
+    value:'Tech',
     showValue:'Technology and Web Development'
   },
   {
