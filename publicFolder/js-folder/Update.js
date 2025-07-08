@@ -1,3 +1,15 @@
+import { subjectList } from "./Quiz-data.js"
+let choose = localStorage.getItem("choose");
+let subjectQuestion;
+for(let i = 0; i < subjectList.length; i++){
+
+   if(subjectList[i].category === choose)
+   {
+      subjectQuestion = subjectList[i];
+   }
+}
+ document.querySelector('.subject-name').value = subjectQuestion.category;
+
 function generateUpdate(){
     document.querySelector('.QuestionContainer-js').innerHTML = `
 <p class="text-2xl font-bold">Question ${++questionIndex}</p>

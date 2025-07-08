@@ -25,7 +25,11 @@ html += `<div class="${subject.subjectCategory}QuizContainer flex  flex-col  p-8
     })
 
   document.querySelectorAll('.update-button').forEach((button)=>{
-    button.
+    button.addEventListener('click',()=>{
+      const {category} = button.dataset;
+      localStorage.setItem("choose",category);
+    window.location.href = `./Update.html`
+    })
   })
    
 })

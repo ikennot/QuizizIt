@@ -144,6 +144,7 @@ export let subjectList =JSON.parse(localStorage.getItem('quiz')) || [
 
 ];
 
+export subjectCategoryList = ['academic']
 
 export function deleteQuiz(category){
      let newSubjectList = [];
