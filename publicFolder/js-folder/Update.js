@@ -195,12 +195,14 @@ generateQuestionsValue(subjectIndex);
    subjectIndex--;
    questionIndex--;
   }
-
+   subjectItems--;
    generateUpdate(); 
 
 
 
  })
+
+ console.log(subjectQuestion)
 
 }
 
