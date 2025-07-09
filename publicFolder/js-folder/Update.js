@@ -1,4 +1,4 @@
-import { subjectList,subjectCategoryList } from "./Quiz-data.js"
+import { subjectList,subjectCategoryList,saveLocalStorage } from "./Quiz-data.js"
 import { isAllFilledUp,isSubAndCategoryFilledUp,addQuestion} from "./QuizCreation.js";
 let categoryHTML = ``;
 let questionIndex = 0; 
@@ -42,7 +42,7 @@ document.querySelector('.choose-option').innerHTML = categoryHTML;
    option4.value = `${subjectQuestion.questionList[i].options[3]}`
 
  let num = 1;
- document.querySelectorAll('.chooseAnswerButton').forEach((button)=>{
+ document.querySelectorAll('.chooseAnswerButton').forEach(()=>{
     
   
   
@@ -147,6 +147,24 @@ generateQuestionsValue(subjectIndex);
    alert('Please Complete Question form');
  })
 
+
+ const doneButton = document.querySelector('.button-done');
+ doneButton.addEventListener('click',()=>{
+   const isCompleteQuestion = isAllFilledUp();
+  const isThereSubAndCat = isSubAndCategoryFilledUp();
+   if(!isCompleteQuestion || !isThereSubAndCat)
+  {
+    alert('Please Fill up all forms');
+    return;
+  }
+  (subjectIndex < subjectItems) ? updateQuestion(ans) :addQuestion(ans);
+  saveLocalStorage();
+  window.location.href ="./MainMenu.html";
+
+
+
+
+ })
 
 }
 
