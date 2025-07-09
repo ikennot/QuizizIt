@@ -7,6 +7,7 @@ let questionIndex = 0;
      let ans = '';
     let questionList = [] 
   
+    //fill up question and ans validation
  export function isAllFilledUp(ans){
     const question = document.querySelector('.getQuestion').value;
      const O1 = document.querySelector('.option1').value;
@@ -18,17 +19,20 @@ let questionIndex = 0;
     console.log('O2:', O2);
     console.log('O3:', O3);
     console.log('O4:', O4);
-    console.log('ans:', ans); // important: baka ito ang empty
+    console.log('ans:', ans);
      return (question !== '') && (ans !== '') && (O1 !== '') && (O2 !== '') && (O3 !== '') && (O4 !== '');
  }
 
+ //category and subject validation
 export function isSubAndCategoryFilledUp(){
   const subname = document.querySelector('.subject-name').value;
   const category = document.querySelector('.subject-category').value;
 
   return (subname !=='') && (category !== '');
  }
-function addQuestion(ans){
+
+ //pushing question
+export function addQuestion(ans){
    const question = document.querySelector('.getQuestion').value;
      const O1 = document.querySelector('.option1').value;
      const O2 = document.querySelector('.option2').value;
@@ -46,6 +50,8 @@ function addQuestion(ans){
     )
   
 }
+
+//for generating questions
 function CreateQuestion(){
 document.querySelector('.QuestionContainer-js').innerHTML = `
 <p class="text-2xl font-bold">Question ${++questionIndex}</p>
@@ -61,6 +67,7 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
     <button class="button button-next">Next Question</button>
   </div>
 `
+//adding function for choosing answer 
  document.querySelectorAll('.chooseAnswerButton').forEach((button)=>{
   button.addEventListener('click',()=>{
     const {choose} = button.dataset;
@@ -81,6 +88,7 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
   })
  })
 
+ //adding button function for next question
  const nextButton = document.querySelector('.button-next');
  nextButton.addEventListener('click',()=>{
     const isFillAll = isAllFilledUp(ans);
@@ -92,6 +100,7 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
    alert('Please Complete Question form');
  })
 
+ //validation for done button
  const doneButton = document.querySelector('.button-done');
  doneButton.addEventListener('click',()=>{
   const isCompleteQuestion = isAllFilledUp();

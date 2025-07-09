@@ -1,5 +1,5 @@
 import { subjectList,subjectCategoryList } from "./Quiz-data.js"
-import { isAllFilledUp,isSubAndCategoryFilledUp } from "./QuizCreation.js";
+import { isAllFilledUp,isSubAndCategoryFilledUp,addQuestion} from "./QuizCreation.js";
 let categoryHTML = ``;
 let questionIndex = 0; 
 let subjectIndex = 0; 
@@ -59,6 +59,8 @@ document.querySelector('.choose-option').innerHTML = categoryHTML;
    })
  }
 
+
+ //Current quiz validator
 function updateQuestion(ans){
    const question = document.querySelector('.getQuestion').value;
      const O1 = document.querySelector('.option1').value;
@@ -68,19 +70,21 @@ function updateQuestion(ans){
        
   
      
-      subjectQuestion.questionList[subjectIndex] = (
-       {
+      subjectQuestion.questionList[subjectIndex] = {
        question,
        ans,
        options : [O1,O2,O3,O4]
        }
-    )
+           
+   
+    console.log(subjectQuestion.questionList[subjectIndex]);
+
   
 }
 
 //generating question to be update
 function generateUpdate(){
- 
+      ans ='';
     document.querySelector('.QuestionContainer-js').innerHTML = `
 <p class="text-2xl font-bold">Question ${++questionIndex}</p>
  <input type="text" placeholder="Enter Question" class="bg-white text-black p-1.5 sm:p-2.5 sm:w-[400px] getQuestion">
@@ -126,17 +130,17 @@ generateQuestionsValue(subjectIndex);
 }
 
 
-console.log(ans)
+
 
 
 //next button
  const nextButton = document.querySelector('.button-next');
  nextButton.addEventListener('click',()=>{
-    console.log(subjectIndex)
+    
     const isFillAll = isAllFilledUp(ans);
     
    if(isFillAll){
-  updateQuestion(ans);
+    (subjectIndex < subjectItems) ? updateQuestion(ans) :addQuestion(ans);
     subjectIndex++; 
     generateUpdate(); 
    }else
