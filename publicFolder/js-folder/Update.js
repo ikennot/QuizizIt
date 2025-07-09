@@ -104,6 +104,7 @@ function updateQuestion(ans){
 
 //generating question to be update
 function generateUpdate(){
+  
       ans ='';
     document.querySelector('.QuestionContainer-js').innerHTML = `
 <p class="text-2xl font-bold">Question ${++questionIndex}</p>
@@ -121,7 +122,8 @@ function generateUpdate(){
 
   </div>
 `
-
+ console.log(subjectIndex)
+   console.log(questionIndex)
  
 //for choosing answer
  document.querySelectorAll('.chooseAnswerButton').forEach((button)=>{
@@ -187,8 +189,16 @@ generateQuestionsValue(subjectIndex);
  const deleteButton = document.querySelector('.button-delete');
  deleteButton.addEventListener('click',()=>{
   if(subjectIndex < subjectItems){
-   subjectQuestion.qu
-}
+   subjectQuestion.questionList.splice(1,subjectIndex);
+  }
+  if(subjectIndex>0){
+   subjectIndex--;
+   questionIndex--;
+  }
+
+   generateUpdate(); 
+
+
 
  })
 
