@@ -18,14 +18,14 @@ for(let i = 0; i < subjectList.length; i++){
       subjectQuestion = subjectList[i];
    }
 }
- 
+ //generating container
 document.querySelector('.quiz-container-js').innerHTML = `
 <img src="./assets/subject-icon/${subjectQuestion.subjectCategory}.png" class="w-[40px] h-[40px]">  
     <p class="font-bold text-3xl">${subjectQuestion.category} Quiz</p>
 `
 questionList = subjectQuestion.questionList;
 let length = subjectQuestion.items;
- 
+ //generating question
 function questionnare(i){
    let questionNum = document.querySelector('.questionNum-js');
    let question = document.querySelector('.question-js');
@@ -41,9 +41,9 @@ function questionnare(i){
  
 buttonOption.innerHTML = html;
   
-
+//answer delay
 document.querySelectorAll('.ansButton-js').forEach((button)=>{
-   
+   //generating answer button
    button.addEventListener('click',()=>{
       let {answer} = button.dataset;
       (answer === questionList[i].ans)? (correct.play(), score++) : wrong.play();
@@ -64,7 +64,7 @@ document.querySelectorAll('.ansButton-js').forEach((button)=>{
    })
 })
 }
-
+//for displaying score
 function DisplayScore(){
    let mainContainer = document.querySelector('.mainBody');
    mainContainer.innerHTML = `<div class="bg-blue-950 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] rounded-2xl flex flex-col items-center justify-center p-5 gap-5">

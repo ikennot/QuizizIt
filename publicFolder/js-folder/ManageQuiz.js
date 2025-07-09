@@ -1,5 +1,5 @@
 import { subjectList,deleteQuiz } from "./Quiz-data.js";
-
+//generates Tables
 function generateManageTables(){
 let html = ''
 
@@ -33,7 +33,7 @@ html += `<div class="${subject.subjectCategory}QuizContainer flex  flex-col  p-8
   })
    
 })
-
+//back to home button
 const backhome=document.querySelector('.back-home-js');
 
  backhome.addEventListener('click',()=>{

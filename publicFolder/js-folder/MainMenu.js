@@ -1,5 +1,5 @@
 import { subjectList } from "./Quiz-data.js";
-
+//main menu
 const createquiz = document.querySelector('.create-quiz-js');
 createquiz.addEventListener('click',()=>{
   window.location.href='./QuizCreation.html'

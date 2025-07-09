@@ -1,4 +1,4 @@
-
+//quiz data
 export function saveLocalStorage(){
   localStorage.setItem('quiz',JSON.stringify(subjectList));
 }
