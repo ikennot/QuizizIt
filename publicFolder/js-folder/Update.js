@@ -204,7 +204,8 @@ if(subjectIndex < subjectItems)
 
   } else{
    subjectIndex--;
-   
+   questionIndex-=2;
+      generateUpdate(); 
   }
 
  })
