@@ -7,7 +7,7 @@ let questionIndex = 0;
      let ans = '';
     let questionList = [] 
   
- export function isAllFilledUp(){
+ export function isAllFilledUp(ans){
     const question = document.querySelector('.getQuestion').value;
      const O1 = document.querySelector('.option1').value;
      const O2 = document.querySelector('.option2').value;
@@ -83,7 +83,7 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
 
  const nextButton = document.querySelector('.button-next');
  nextButton.addEventListener('click',()=>{
-    const isFillAll = isAllFilledUp();
+    const isFillAll = isAllFilledUp(ans);
    if(isFillAll){
    addQuestion(ans);
   ++items;

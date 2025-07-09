@@ -66,7 +66,7 @@ function updateQuestion(ans){
        
   
      
-      questionList[questionIndex] = (
+      subjectQuestion.questionList[questionIndex] = (
        {
        question,
        ans,
@@ -130,11 +130,10 @@ console.log(ans)
 //next button
  const nextButton = document.querySelector('.button-next');
  nextButton.addEventListener('click',()=>{
-    const isFillAll = isAllFilledUp();
+    const isFillAll = isAllFilledUp(ans);
     
    if(isFillAll){
    updateQuestion(ans);
-  ++items;
   ++questionIndex;
   generateUpdate();
    }else
