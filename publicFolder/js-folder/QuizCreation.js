@@ -32,7 +32,7 @@ export function isSubAndCategoryFilledUp(){
  }
 
  //pushing question
-export function addQuestion(ans){
+ function addQuestion(ans){
    const question = document.querySelector('.getQuestion').value;
      const O1 = document.querySelector('.option1').value;
      const O2 = document.querySelector('.option2').value;

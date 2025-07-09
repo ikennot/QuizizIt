@@ -1,5 +1,5 @@
 import { subjectList,subjectCategoryList,saveLocalStorage } from "./Quiz-data.js"
-import { isAllFilledUp,isSubAndCategoryFilledUp,addQuestion} from "./QuizCreation.js";
+import { isAllFilledUp,isSubAndCategoryFilledUp} from "./QuizCreation.js";
 let categoryHTML = ``;
 let questionIndex = 0; 
 let subjectIndex = 0; 
@@ -14,7 +14,7 @@ for(let i = 0; i < subjectList.length; i++){
    }
 }
 
-const subjectItems = subjectQuestion.items;
+let subjectItems = subjectQuestion.items;
 
 document.querySelector('.subject-name').value = subjectQuestion.category;
 
@@ -59,6 +59,27 @@ document.querySelector('.choose-option').innerHTML = categoryHTML;
    })
  }
 
+ //pushing question
+ function addQuestion(ans){
+   const question = document.querySelector('.getQuestion').value;
+     const O1 = document.querySelector('.option1').value;
+     const O2 = document.querySelector('.option2').value;
+     const O3 = document.querySelector('.option3').value;
+     const O4 = document.querySelector('.option4').value;
+       
+  
+     
+      subjectQuestion.questionList.push(
+       {
+       question,
+       ans,
+       options : [O1,O2,O3,O4]
+       }
+    )
+  
+    subjectItems++;
+}
+
 
  //Current quiz validator
 function updateQuestion(ans){
@@ -76,8 +97,7 @@ function updateQuestion(ans){
        options : [O1,O2,O3,O4]
        }
            
-   
-    console.log(subjectQuestion.questionList[subjectIndex]);
+
 
   
 }
@@ -97,6 +117,8 @@ function generateUpdate(){
   <div class="flex flex-row items-center gap-3">
     <button class="button button-done">Done</button>
     <button class="button button-next">Next Question</button>
+        <button class="button button-delete bg-red-500">Delete</button>
+
   </div>
 `
 
@@ -114,7 +136,6 @@ function generateUpdate(){
         removebutton.classList.remove('bg-red-500'); 
       }else{
         ans = document.querySelector(`.option${num}`).value;
-        console.log(ans)
       }
 
       num++;
@@ -147,7 +168,7 @@ generateQuestionsValue(subjectIndex);
    alert('Please Complete Question form');
  })
 
-
+//button functionality if user is done to edit quiz
  const doneButton = document.querySelector('.button-done');
  doneButton.addEventListener('click',()=>{
    const isCompleteQuestion = isAllFilledUp();
@@ -158,11 +179,16 @@ generateQuestionsValue(subjectIndex);
     return;
   }
   (subjectIndex < subjectItems) ? updateQuestion(ans) :addQuestion(ans);
+  subjectQuestion.items = subjectItems;
   saveLocalStorage();
   window.location.href ="./MainMenu.html";
+ })
 
-
-
+ const deleteButton = document.querySelector('.button-delete');
+ deleteButton.addEventListener('click',()=>{
+  if(subjectIndex < subjectItems){
+   subjectQuestion.qu
+}
 
  })
 
