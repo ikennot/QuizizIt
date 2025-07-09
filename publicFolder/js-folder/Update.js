@@ -122,8 +122,7 @@ function generateUpdate(){
 
   </div>
 `
- console.log(subjectIndex)
-   console.log(questionIndex)
+
  
 //for choosing answer
  document.querySelectorAll('.chooseAnswerButton').forEach((button)=>{
@@ -186,17 +185,24 @@ generateQuestionsValue(subjectIndex);
   window.location.href ="./MainMenu.html";
  })
 
+ //delete question
  const deleteButton = document.querySelector('.button-delete');
  deleteButton.addEventListener('click',()=>{
   if(subjectIndex < subjectItems){
-   subjectQuestion.questionList.splice(1,subjectIndex);
+subjectQuestion.questionList.splice(subjectIndex, 1);
+
   }
-  if(subjectIndex>0){
-   subjectIndex--;
-   questionIndex--;
-  }
+  
+   if(subjectIndex !== 0){
+      subjectIndex--;
+        questionIndex-=2;
+   }else{
+    questionIndex--;
+   }
+ 
+    subjectQuestion.items--;
    subjectItems--;
-   generateUpdate(); 
+   generateUpdate(subjectIndex); 
 
 
 
