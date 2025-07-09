@@ -7,7 +7,7 @@ let questionIndex = 0;
      let ans = '';
     let questionList = [] 
   
- function isAllFilledUp(){
+ export function isAllFilledUp(){
     const question = document.querySelector('.getQuestion').value;
      const O1 = document.querySelector('.option1').value;
      const O2 = document.querySelector('.option2').value;
@@ -17,7 +17,7 @@ let questionIndex = 0;
      return (question !== '') && (ans !== '') && (O1 !== '') && (O2 !== '') && (O3 !== '') && (O4 !== '');
  }
 
- function isSubAndCategoryFilledUp(){
+export function isSubAndCategoryFilledUp(){
   const subname = document.querySelector('.subject-name').value;
   const category = document.querySelector('.subject-category').value;
 
@@ -39,7 +39,7 @@ function addQuestion(ans){
        options : [O1,O2,O3,O4]
        }
     )
-  console.log(questionList);
+  
 }
 function CreateQuestion(){
 document.querySelector('.QuestionContainer-js').innerHTML = `

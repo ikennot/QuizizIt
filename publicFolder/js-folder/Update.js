@@ -1,4 +1,5 @@
 import { subjectList,subjectCategoryList } from "./Quiz-data.js"
+import { isAllFilledUp,isSubAndCategoryFilledUp } from "./QuizCreation.js";
 let categoryHTML = ``;
 let questionIndex = 0;  
 let choose = localStorage.getItem("choose");
@@ -12,6 +13,8 @@ for(let i = 0; i < subjectList.length; i++){
    }
 }
 
+const subjectItems = subjectQuestion.items;
+
 document.querySelector('.subject-name').value = subjectQuestion.category;
 
 const category = subjectQuestion.subjectCategory;
@@ -24,6 +27,7 @@ subjectCategoryList.forEach((subject)=>{
 document.querySelector('.choose-option').innerHTML = categoryHTML;
 
 
+//for getting questions and dynamically type it
  function generateQuestionsValue(i){
   document.querySelector('.getQuestion').value = subjectQuestion.questionList[i].question
    const option1 = document.querySelector('.option1');
@@ -52,7 +56,26 @@ document.querySelector('.choose-option').innerHTML = categoryHTML;
    })
  }
 
+function updateQuestion(ans){
+   const question = document.querySelector('.getQuestion').value;
+     const O1 = document.querySelector('.option1').value;
+     const O2 = document.querySelector('.option2').value;
+     const O3 = document.querySelector('.option3').value;
+     const O4 = document.querySelector('.option4').value;
+       
+  
+     
+      questionList[questionIndex] = (
+       {
+       question,
+       ans,
+       options : [O1,O2,O3,O4]
+       }
+    )
+  
+}
 
+//generating question to be update
 function generateUpdate(){
     document.querySelector('.QuestionContainer-js').innerHTML = `
 <p class="text-2xl font-bold">Question ${++questionIndex}</p>
@@ -68,6 +91,7 @@ function generateUpdate(){
     <button class="button button-next">Next Question</button>
   </div>
 `
+//for choosing answer
  document.querySelectorAll('.chooseAnswerButton').forEach((button)=>{
   button.addEventListener('click',()=>{
     const {choose} = button.dataset;
@@ -89,6 +113,31 @@ function generateUpdate(){
   })
  })
 
-generateQuestionsValue(0)
+
+//next button
+ const nextButton = document.querySelector('.button-next');
+ nextButton.addEventListener('click',()=>{
+    const isFillAll = isAllFilledUp();
+   if(isFillAll){
+   updateQuestion(ans);
+  ++items;
+  ++questionIndex;
+  generateUpdate();
+   }else
+   alert('Please Complete Question form');
+ })
+
+const O1 = document.querySelector('.option1').value='tae';
+console.log(O1)
+
+ //condition if the update question is in current or new
+if(questionIndex < subjectItems)
+generateQuestionsValue(questionIndex);
+
+
 }
+
+
+
 generateUpdate();
+
