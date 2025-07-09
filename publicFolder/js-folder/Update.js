@@ -179,7 +179,7 @@ generateQuestionsValue(subjectIndex);
     alert('Please Fill up all forms');
     return;
   }
-  (subjectIndex < subjectItems) ? updateQuestion(ans) :addQuestion(ans);
+  (subjectIndex < subjectItems) ? updateQuestion(ans):addQuestion(ans);
   subjectQuestion.items = subjectItems;
   saveLocalStorage();
   window.location.href ="./MainMenu.html";
@@ -188,23 +188,24 @@ generateQuestionsValue(subjectIndex);
  //delete question
  const deleteButton = document.querySelector('.button-delete');
  deleteButton.addEventListener('click',()=>{
-  if(subjectIndex < subjectItems){
-subjectQuestion.questionList.splice(subjectIndex, 1);
+ 
 
-  }
-  
+if(subjectIndex < subjectItems)
+{
+  subjectQuestion.questionList.splice(subjectIndex, 1);
    if(subjectIndex !== 0){
       subjectIndex--;
-        questionIndex-=2;
+      questionIndex-=2;
    }else{
     questionIndex--;
    }
- 
-    subjectQuestion.items--;
    subjectItems--;
-   generateUpdate(subjectIndex); 
+   generateUpdate(); 
 
-
+  } else{
+   subjectIndex--;
+   
+  }
 
  })
 
