@@ -20,8 +20,10 @@ subjectCategoryList.forEach((subject)=>{
   categoryHTML+=`<option value="${subject.value}" ${isSelected}>${subject.showValue}</option>`
 
 })
-
+ 
 document.querySelector('.choose-option').innerHTML = categoryHTML;
+
+
  function generateQuestionsValue(i){
   document.querySelector('.getQuestion').value = subjectQuestion.questionList[i].question
    const option1 = document.querySelector('.option1');
@@ -33,12 +35,20 @@ document.querySelector('.choose-option').innerHTML = categoryHTML;
    const option4 = document.querySelector('.option4');
    option4.value = `${subjectQuestion.questionList[i].options[3]}`
 
-
+ let num = 1;
  document.querySelectorAll('.chooseAnswerButton').forEach((button)=>{
-    const {choose} = button.dataset;
+   
+  
+  let answer = (document.querySelector(`.option${num}`).value).toString();
+   console.log(answer)
     
-      if(choose === subjectQuestion.questionList[i].ans)
-        button.classList.add('bg-red-500');
+      if(answer === subjectQuestion.questionList[i].ans)
+      {
+       const choose = document.querySelector(`.class${num}`);
+        choose.classList.add('bg-red-500');
+      }else{
+        num++;
+      }
    })
  }
 
@@ -48,10 +58,10 @@ function generateUpdate(){
 <p class="text-2xl font-bold">Question ${++questionIndex}</p>
  <input type="text" placeholder="Enter Question" class="bg-white text-black p-1.5 sm:p-2.5 sm:w-[400px] getQuestion">
   <div class=" flex flex-col items-center gap-1.5">
-  <div class="flex flex-row items-center gap-2.5"><input type="text" placeholder="Option 1" class="inputChoice option1"> <button class="chooseAnswerButton" data-choose="choose1"></button></div> 
-  <div class="flex flex-row items-center gap-2.5"><input type="text" placeholder="Option 2" class="inputChoice option2"> <button class="chooseAnswerButton" data-choose="choose2"></button></div> 
-  <div class="flex flex-row items-center gap-2.5"><input type="text" placeholder="Option 3" class="inputChoice option3"> <button class="chooseAnswerButton" data-choose="choose3"></button></div> 
-  <div class="flex flex-row items-center gap-2.5"><input type="text" placeholder="Option 4" class="inputChoice option4"> <button class="chooseAnswerButton" data-choose="choose4"></button></div> 
+  <div class="flex flex-row items-center gap-2.5"><input type="text" placeholder="Option 1" class="inputChoice option1"> <button class="chooseAnswerButton class1" data-choose="choose1"></button></div> 
+  <div class="flex flex-row items-center gap-2.5"><input type="text" placeholder="Option 2" class="inputChoice option2"> <button class="chooseAnswerButton class2" data-choose="choose2"></button></div> 
+  <div class="flex flex-row items-center gap-2.5"><input type="text" placeholder="Option 3" class="inputChoice option3"> <button class="chooseAnswerButton class3" data-choose="choose3"></button></div> 
+  <div class="flex flex-row items-center gap-2.5"><input type="text" placeholder="Option 4" class="inputChoice option4"> <button class="chooseAnswerButton class4" data-choose="choose4"></button></div> 
   </div>
   <div class="flex flex-row items-center gap-3">
     <button class="button button-done">Done</button>
