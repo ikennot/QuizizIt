@@ -1,7 +1,8 @@
 import { subjectList,subjectCategoryList } from "./Quiz-data.js"
 import { isAllFilledUp,isSubAndCategoryFilledUp } from "./QuizCreation.js";
 let categoryHTML = ``;
-let questionIndex = 0;  
+let questionIndex = 0; 
+let subjectIndex = 0; 
 let choose = localStorage.getItem("choose");
 let subjectQuestion;
  let ans = '';
@@ -29,6 +30,7 @@ document.querySelector('.choose-option').innerHTML = categoryHTML;
 
 //for getting questions and dynamically type it
  function generateQuestionsValue(i){
+
   document.querySelector('.getQuestion').value = subjectQuestion.questionList[i].question
    const option1 = document.querySelector('.option1');
    option1.value = `${subjectQuestion.questionList[i].options[0]}`
@@ -78,6 +80,7 @@ function updateQuestion(ans){
 
 //generating question to be update
 function generateUpdate(){
+  subjectIndex++;
     document.querySelector('.QuestionContainer-js').innerHTML = `
 <p class="text-2xl font-bold">Question ${++questionIndex}</p>
  <input type="text" placeholder="Enter Question" class="bg-white text-black p-1.5 sm:p-2.5 sm:w-[400px] getQuestion">
@@ -118,10 +121,9 @@ function generateUpdate(){
 
 
  //condition if the update question is in current or new
-if(questionIndex < subjectItems)
-generateQuestionsValue(questionIndex);
-
-
+if(subjectIndex < subjectItems){
+generateQuestionsValue(subjectIndex);
+}
 
 
 console.log(ans)
@@ -134,7 +136,6 @@ console.log(ans)
     
    if(isFillAll){
    updateQuestion(ans);
-  ++questionIndex;
   generateUpdate();
    }else
    alert('Please Complete Question form');
