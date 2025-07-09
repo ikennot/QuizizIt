@@ -41,15 +41,16 @@ document.querySelector('.choose-option').innerHTML = categoryHTML;
 
  let num = 1;
  document.querySelectorAll('.chooseAnswerButton').forEach((button)=>{
-   
+    
+  
   
   let answer = (document.querySelector(`.option${num}`).value).toString();
-   console.log(answer)
     
       if(answer === subjectQuestion.questionList[i].ans)
       {
        const choose = document.querySelector(`.class${num}`);
         choose.classList.add('bg-red-500');
+        ans = answer;
       }else{
         num++;
       }
@@ -91,6 +92,8 @@ function generateUpdate(){
     <button class="button button-next">Next Question</button>
   </div>
 `
+
+ 
 //for choosing answer
  document.querySelectorAll('.chooseAnswerButton').forEach((button)=>{
   button.addEventListener('click',()=>{
@@ -114,10 +117,21 @@ function generateUpdate(){
  })
 
 
+ //condition if the update question is in current or new
+if(questionIndex < subjectItems)
+generateQuestionsValue(questionIndex);
+
+
+
+
+console.log(ans)
+
+
 //next button
  const nextButton = document.querySelector('.button-next');
  nextButton.addEventListener('click',()=>{
     const isFillAll = isAllFilledUp();
+    
    if(isFillAll){
    updateQuestion(ans);
   ++items;
@@ -126,13 +140,6 @@ function generateUpdate(){
    }else
    alert('Please Complete Question form');
  })
-
-const O1 = document.querySelector('.option1').value='tae';
-console.log(O1)
-
- //condition if the update question is in current or new
-if(questionIndex < subjectItems)
-generateQuestionsValue(questionIndex);
 
 
 }

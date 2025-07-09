@@ -13,7 +13,12 @@ let questionIndex = 0;
      const O2 = document.querySelector('.option2').value;
      const O3 = document.querySelector('.option3').value;
      const O4 = document.querySelector('.option4').value;
-
+       console.log('question:', question);
+    console.log('O1:', O1);
+    console.log('O2:', O2);
+    console.log('O3:', O3);
+    console.log('O4:', O4);
+    console.log('ans:', ans); // important: baka ito ang empty
      return (question !== '') && (ans !== '') && (O1 !== '') && (O2 !== '') && (O3 !== '') && (O4 !== '');
  }
 
@@ -68,7 +73,6 @@ document.querySelector('.QuestionContainer-js').innerHTML = `
         removebutton.classList.remove('bg-red-500'); 
       }else{
         ans = document.querySelector(`.option${num}`).value;
-        console.log(ans)
       }
 
       num++;
