@@ -68,7 +68,7 @@ function updateQuestion(ans){
        
   
      
-      subjectQuestion.questionList[questionIndex] = (
+      subjectQuestion.questionList[subjectIndex] = (
        {
        question,
        ans,
@@ -80,7 +80,7 @@ function updateQuestion(ans){
 
 //generating question to be update
 function generateUpdate(){
-  subjectIndex++;
+ 
     document.querySelector('.QuestionContainer-js').innerHTML = `
 <p class="text-2xl font-bold">Question ${++questionIndex}</p>
  <input type="text" placeholder="Enter Question" class="bg-white text-black p-1.5 sm:p-2.5 sm:w-[400px] getQuestion">
@@ -132,11 +132,13 @@ console.log(ans)
 //next button
  const nextButton = document.querySelector('.button-next');
  nextButton.addEventListener('click',()=>{
+    console.log(subjectIndex)
     const isFillAll = isAllFilledUp(ans);
     
    if(isFillAll){
-   updateQuestion(ans);
-  generateUpdate();
+  updateQuestion(ans);
+    subjectIndex++; 
+    generateUpdate(); 
    }else
    alert('Please Complete Question form');
  })
@@ -146,5 +148,5 @@ console.log(ans)
 
 
 
-generateUpdate();
+generateUpdate(subjectIndex);
 
