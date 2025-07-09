@@ -33,6 +33,13 @@ html += `<div class="${subject.subjectCategory}QuizContainer flex  flex-col  p-8
   })
    
 })
+
+const backhome=document.querySelector('.back-home-js');
+
+ backhome.addEventListener('click',()=>{
+   window.location.href = `./MainMenu.html`
+})
+
 }
 
 generateManageTables();
