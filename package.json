@@ -5,7 +5,7 @@
   },
     "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "npx @tailwindcss/cli -i ./src/input.css -o ./publicFolder/styles.css --watch",
-    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./publicFolder/styles.css"
+    "dev" : "npx @tailwindcss/cli -i ./src/input.css -o ./public/styles.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./public/styles.css"
   }
 }
